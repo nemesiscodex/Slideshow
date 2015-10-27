@@ -2,7 +2,7 @@
 
 $title = $description = $url = $urlTarget = $alternativeText = $noFollow = $postId = '';
 
-$backgroundColor = 'inherit';
+$backgroundColor = 'initial';
 
 $titleElementTag = $descriptionElementTag = SlideshowPluginSlideInserter::getElementTag();
 

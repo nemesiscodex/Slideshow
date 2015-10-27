@@ -9,7 +9,7 @@ if (isset($attachment)):
 
 	$title = $titleElementTagID = $description = $descriptionElementTagID = $url = $target = $alternativeText = '';
 
-	$backgroundColor = 'inherit';
+	$backgroundColor = 'initial';
 
     $noFollow = false;
 
