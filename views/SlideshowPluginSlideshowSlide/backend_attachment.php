@@ -9,11 +9,18 @@ if (isset($attachment)):
 
 	$title = $titleElementTagID = $description = $descriptionElementTagID = $url = $target = $alternativeText = '';
 
+	$backgroundColor = 'inherit';
+
     $noFollow = false;
 
     if (isset($properties['title']))
 	{
 		$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
+	}
+
+	if (isset($properties['backgroundColor']))
+	{
+		$backgroundColor = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['backgroundColor']));
 	}
 
 	if (isset($properties['titleElementTagID']))
@@ -129,6 +136,14 @@ if (isset($attachment)):
 					</div>
 					<div class="clear"></div>
 					<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" style="width: 100%;" />
+
+				</div>
+
+				<div class="slideshow-group">
+
+					<div class="slideshow-left slideshow-label"><?php _e('Color', 'slideshow-jquery-image-gallery'); ?></div>
+					<div class="clear"></div>
+					<input type="text" name="<?php echo $name; ?>[backgroundColor]" value="<?php echo $backgroundColor; ?>" style="width: 100%;" />
 
 				</div>
 

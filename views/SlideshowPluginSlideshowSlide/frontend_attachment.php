@@ -2,11 +2,18 @@
 
 $title = $description = $url = $urlTarget = $alternativeText = $noFollow = $postId = '';
 
+$backgroundColor = 'inherit';
+
 $titleElementTag = $descriptionElementTag = SlideshowPluginSlideInserter::getElementTag();
 
 if (isset($properties['title']))
 {
 	$title = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
+}
+
+if (isset($properties['backgroundColor']))
+{
+	$backgroundColor = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['backgroundColor']));
 }
 
 if (isset($properties['titleElementTagID']))
@@ -119,7 +126,7 @@ if (is_numeric($postId)):
 		// If image is available
 		if ($imageAvailable): ?>
 
-			<div class="slideshow_slide slideshow_slide_image">
+			<div class="slideshow_slide slideshow_slide_image" style="background-color: <?php echo $backgroundColor; ?>; ">
 				<?php echo $anchorTag; ?>
 					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alternativeText; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
 				<?php echo $endAnchorTag; ?>
